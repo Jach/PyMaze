@@ -22,7 +22,7 @@ class Game:
     self.dim = map(int, dim.split('x'))
     self.path = path
 
-  def start(self):
+  def restart(self):
     self.maze_obj = Maze(*self.dim)# pass args to change maze size: Maze(10, 10)
     if self.diff == 0:
       self.maze_obj.generate(self.maze_obj.maze[(0,0)])
@@ -30,6 +30,9 @@ class Game:
       self.maze_obj.generate()
     self.draw_maze()
     self.reset_player()
+
+  def start(self):
+    self.restart()
     self.loop()
 
   def reset_player(self):
@@ -174,7 +177,7 @@ class Game:
     # Check for victory.
     if self.cx + 1 == self.maze_obj.cols and self.cy + 1 == self.maze_obj.rows:
       print 'Congratumalations, you beat this maze.'
-      self.keep_going = 0
+      self.restart()
 
   def draw_player(self):
     for y in xrange(self.maze_obj.rows):

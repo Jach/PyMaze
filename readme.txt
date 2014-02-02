@@ -1,3 +1,14 @@
+Feb 1, 2014
+
+Added this old project of mine to GitHub for archival reasons.
+See a picture of it in action here: http://www.pygame.org/project-PyMaze-733-.html
+
+Changed winning behavior: instead of closing the game, generate a new maze.
+
+====
+
+May 7, 2008 (?)
+
 This is just a little maze program I wrote which I plan on using in a
 larger game. It's licensed under GPLv3, as included.
 

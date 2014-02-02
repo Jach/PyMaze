@@ -15,11 +15,13 @@ class Maze:
         cell = {'south' : 1, 'east' : 1, 'visited': 0}
         self.maze[(x,y)] = cell
 
-  def generate(self, start_cell=None, stack=[]):
+  def generate(self, start_cell=None, stack=None):
     """Generates a random maze using a magical simple recursive function."""
 
     if start_cell is None:
       start_cell = self.maze[(self.cols-1, self.rows-1)]
+    if stack is None:
+      stack = []
     
     if not self.keep_going:
       return
